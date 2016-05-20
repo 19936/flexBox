@@ -1,0 +1,90 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: deepskyblue;
+    color: #fff;
+}
+
+header h1 {
+    margin: 0;
+    padding: 1em;
+}
+
+aside {
+    padding: 1em;
+    background-color: grey;
+}
+
+article {
+    padding: 1em;
+}
+
+footer {
+    padding: 1em;
+    background-color: darkred;
+    color: white;
+}
+
+/* FLEXBOX */
+
+/* MOBIEL*/
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+aside {
+    order: 1
+}
+
+footer:after {
+    content: 'Dit is voor mobiel';
+}
+
+/* 26EM*/
+@media screen and (min-width: 26em) {
+    
+    main {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    article {
+        width: 100%;
+    }
+    
+    aside {
+        flex: 1;
+    }
+    
+    footer:after {
+        content: 'Dit is voor tussen de 26 en 36 em';
+    }
+}
+
+/* 36EM*/
+@media screen and (min-width: 36em) {
+    
+    main {
+        flex-wrap: nowrap;
+    }
+    
+    article {
+        width: auto;
+        flex: 3;
+    }
+    
+    aside {
+        order: 0;
+    }
+    
+    footer:after {
+        content: 'Dit is voor groter dan 36 em';
+    }
+}
+
+
